@@ -22,13 +22,13 @@ public class AndroidDriverPool {
 //        caps.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
 //        caps.setCapability(MobileCapabilityType.NO_RESET, false);
-        caps.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + File.separator + "app/app-release.apk");
+        caps.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + File.separator + "app/app-17-june.apk");
 //        caps.setCapability(String.valueOf(Setting.WAIT_FOR_IDLE_TIMEOUT), 100);
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12.0");
 
         try {
             driver = new AndroidDriver(new URL(appiumUrl), caps);
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
